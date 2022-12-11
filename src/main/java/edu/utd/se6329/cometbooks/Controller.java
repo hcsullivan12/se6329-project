@@ -1,5 +1,8 @@
 package edu.utd.se6329.cometbooks;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 //Singleton class pattern
 public class Controller
 {
@@ -9,8 +12,10 @@ public class Controller
     
     public void login(String username, String password, String netId) {
         Student s = new Student(username, password, netId);
-        UTDGalaxy utdg = getInstance();
-        dob = utdg.authenticateUser(netId, password);
+        UTDGalaxy utdg = UTDGalaxy.getInstance();
+        
+        String dob = utdg.authenticateUser(netId, password);
+        
         if(dob == null){
             //handle not authenticated
         } else {
@@ -21,7 +26,7 @@ public class Controller
 
     public void handleGetEnrolledCourses(String netid, Student s){
         UTDCoursebook utdCoursebookInstance = UTDCoursebook.getInstance();
-        ArrayList<Courses> courseList = utdCoursebookInstance.getCourses(netid);
+        ArrayList<Course> courseList = utdCoursebookInstance.getCourses(netid);
         System.out.println("Enrolled courses for the student are:");
         for(int i=0;i<courseList.size();i++){
             System.out.println(courseList.get(i));
@@ -32,21 +37,24 @@ public class Controller
     public void handleGetTextbook(String netid, Student s){
         UTDCoursebook utdCoursebookInstance = UTDCoursebook.getInstance();
         ArrayList<Textbook> textbookList = utdCoursebookInstance.getTextbooks(netid);
+        Scanner sc = new Scanner(System.in);
+        
         System.out.println("Do you want to sell suggested books? (Y/N)");
-        ch = sc.getChar();
-        if (ch == 'N' || ch == 'n') {
+        String ch = sc.nextLine();
+        
+        if (ch.charAt(0) == 'N' || ch.charAt(0) == 'n') {
             ArrayList<Textbook> newTextbookList = new ArrayList<>();
-            while(1) {
+            while(true) {
                 System.out.println("Please enter name of the textbook");
-                textbookName = sc.nextLine();
+                String textbookName = sc.nextLine();
                 System.out.println("Please enter author of the textbook");
-                textbookAuthor = sc.nextLine();
+                String textbookAuthor = sc.nextLine();
                 System.out.println("Please enter ISBN of the textbook");
-                textbookISBN = sc.nextLine();
+                String textbookISBN = sc.nextLine();
                 newTextbookList.add(new Textbook(textbookName, textbookAuthor, textbookISBN));
                 System.out.println("Do you want to continue selling? (Y/N)");
-                flag = sc.getChar();
-                if(flag == 'Y' || flag == 'y') break;
+                String flag = sc.nextLine();
+                if(flag.charAt(0) == 'Y' || flag.charAt(0) == 'y') break;
             }
             addBooksForSale(newTextbookList, s);
         } else {
@@ -78,7 +86,7 @@ public class Controller
         Message message = new Message(from, to, payload);
     }
 
-    public static Controller controllerInstance = null
+    public static Controller controllerInstance = null;
 
     public static Controller getInstance(){
         if(controllerInstance == null) controllerInstance = new Controller();

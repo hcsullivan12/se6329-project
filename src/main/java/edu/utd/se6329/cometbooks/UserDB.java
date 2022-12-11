@@ -1,5 +1,7 @@
 package edu.utd.se6329.cometbooks;
 
+import java.util.ArrayList;
+
 //Singleton class
 public class UserDB
 {
@@ -14,7 +16,7 @@ public class UserDB
         System.out.println("User record added to DB!!!");
     }
 
-    public static UserDB userDBInstance = null
+    public static UserDB userDBInstance = null;
 
     public static UserDB getInstance(){
         if(userDBInstance == null) userDBInstance = new UserDB();

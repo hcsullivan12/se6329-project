@@ -7,7 +7,7 @@ public class Student extends User {
     private String dob = null;
 
     public Student(String uname, String pwd, String netid) {
-        super(netId, name);
+        super(netid, uname);
         studentAccount = new Account(uname, pwd, netid);
     }
     public void update(String dob){

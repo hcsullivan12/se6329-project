@@ -1,13 +1,14 @@
 package edu.utd.se6329.cometbooks;
 
-import java.util.Date;
+import java.util.ArrayList;
 
 public class User
 {
-    private String netId;
-    private String name;
-    private String dob;
-    private ArrayList<Textbook> textbookSold;
+    protected String netId;
+    protected String name;
+    protected String dob;
+    protected ArrayList<Textbook> textbookSold;
+    
     public User(String netId, String name, String dob) {
         this.netId = netId;
         this.name = name;

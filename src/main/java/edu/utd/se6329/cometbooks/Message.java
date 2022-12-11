@@ -7,8 +7,8 @@ public class Message
     private String payload;
 
     public Message(String sender, String receiver, String payload) {
-        this.sender = sender;
-        this.receiver = receiver;
+        this.sender = new Student(sender, "fixme", "fixme");
+        this.receiver = new Student(receiver, "fixme", "fixme");
         this.payload = payload;
         dispatchMessage();
     }

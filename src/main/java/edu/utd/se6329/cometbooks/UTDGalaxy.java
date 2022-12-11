@@ -1,5 +1,8 @@
 package edu.utd.se6329.cometbooks;
 
+import java.util.HashMap;
+import java.util.Map;
+
 //singleton class
 public class UTDGalaxy
 {
@@ -9,18 +12,18 @@ public class UTDGalaxy
 
     private UTDGalaxy(){
         pwdVerifier = new HashMap<>();
-        pwdVerifier["sayan"] = "say";
-        pwdVerifier["ankita"] = "ank";
-        pwdVerifier["hunter"] = "hun";
-        pwdVerifier["bryan"] = "bry";
-        pwdVerifier["trijit"] = "tri";
+        pwdVerifier.put("sayan", "say");
+        pwdVerifier.put("ankita", "ank");
+        pwdVerifier.put("hunter", "hun");
+        pwdVerifier.put("bryan", "bry");
+        pwdVerifier.put("trijit", "tri");
 
         map2 = new HashMap<>();
-        map2["sayan"] = "19960104";
-        map2["ankita"] = "19960930";
-        map2["hunter"] = "19960505";
-        map2["bryan"] = "19960204";
-        map2["trijit"] = "19960202";
+        map2.put("sayan", "19960104");
+        map2.put("ankita", "19960930");
+        map2.put("hunter", "19960505");
+        map2.put("bryan", "19960204");
+        map2.put("trijit", "19960202");
     }
 
     public String authenticateUser(String netid, String password){
@@ -31,9 +34,9 @@ public class UTDGalaxy
         return null;
     }
 
-    public static Controller utdGalaxyInstance = null
+    public static UTDGalaxy utdGalaxyInstance = null;
 
-    public static Controller getInstance(){
+    public static UTDGalaxy getInstance(){
         if(utdGalaxyInstance == null) utdGalaxyInstance = new UTDGalaxy();
         return utdGalaxyInstance;
     }

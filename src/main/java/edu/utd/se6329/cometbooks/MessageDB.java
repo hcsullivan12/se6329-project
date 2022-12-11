@@ -1,5 +1,7 @@
 package edu.utd.se6329.cometbooks;
 
+import java.util.ArrayList;
+
 //Singleton class
 public class MessageDB
 {
@@ -16,7 +18,7 @@ public class MessageDB
         System.out.println("Message record added to DB!!!");
     }
 
-    public static MessageDB messageDBInstance = null
+    public static MessageDB messageDBInstance = null;
 
     public static MessageDB getInstance(){
         if(messageDBInstance == null) messageDBInstance = new MessageDB();

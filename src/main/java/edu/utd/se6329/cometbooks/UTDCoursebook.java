@@ -1,6 +1,8 @@
 package edu.utd.se6329.cometbooks;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 //Singleton class
 public class UTDCoursebook
@@ -42,10 +44,10 @@ public class UTDCoursebook
         }
         return textbooks;
     }
-    public static UTDCoursebook utdCoursebookInstance = null
+    public static UTDCoursebook utdCoursebookInstance = null;
 
     public static UTDCoursebook getInstance(){
-        if(utdCoursebookInstance == null) utdCoursebookInstance = new Controller();
+        if(utdCoursebookInstance == null) utdCoursebookInstance = new UTDCoursebook();
         return utdCoursebookInstance;
     }
 }

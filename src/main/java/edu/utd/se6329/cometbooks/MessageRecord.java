@@ -7,9 +7,7 @@ public class MessageRecord extends Message
     private String payload;
 
     public MessageRecord(Student sender, Student receiver, String payload) {
-        this.sender = sender;
-        this.receiver = receiver;
-        this.payload = payload;
+        super("fixme", "fixme", payload);
         createRecord();
     }
     
