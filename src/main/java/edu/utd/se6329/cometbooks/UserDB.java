@@ -14,7 +14,7 @@ public class UserDB
         System.out.println("User record added to DB!!!");
     }
 
-    public static UserDB userDBInstance = null
+    public static UserDB userDBInstance = null;
 
     public static UserDB getInstance(){
         if(userDBInstance == null) userDBInstance = new UserDB();

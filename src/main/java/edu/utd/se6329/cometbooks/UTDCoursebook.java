@@ -52,10 +52,10 @@ public class UTDCoursebook
         }
         return textbooks;
     }
-    public static UTDCoursebook utdCoursebookInstance = null
+    public static UTDCoursebook utdCoursebookInstance = null;
 
     public static UTDCoursebook getInstance(){
-        if(utdCoursebookInstance == null) utdCoursebookInstance = new Controller();
+        if(utdCoursebookInstance == null) utdCoursebookInstance = new UTDCoursebook();
         return utdCoursebookInstance;
     }
 }

@@ -44,9 +44,9 @@ public class UTDGalaxy
         return null;
     }
 
-    public static Controller utdGalaxyInstance = null
+    public static UTDGalaxy utdGalaxyInstance = null;
 
-    public static Controller getInstance(){
+    public static UTDGalaxy getInstance(){
         if(utdGalaxyInstance == null) utdGalaxyInstance = new UTDGalaxy();
         return utdGalaxyInstance;
     }

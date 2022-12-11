@@ -17,12 +17,12 @@ public class Course {
         textbooks = new ArrayList<Textbook>();
     }
 
-    public void addTextbook(Course course) {
-        this.textbooks.add(course);
+    public void addTextbook(Textbook textbook) {
+        this.textbooks.add(textbook);
     }
     
-    public void removeTextbook(Course course) {
-        this.textbooks.remove(course);
+    public void removeTextbook(Textbook textbook) {
+        this.textbooks.remove(textbook);
     }
 
     public String getName(){

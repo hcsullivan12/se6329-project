@@ -2,7 +2,7 @@ package edu.utd.se6329.cometbooks;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 //Singleton class pattern
 public class Controller
@@ -42,7 +42,7 @@ public class Controller
         char ch = sc.next().charAt(0);
         if (ch == 'N' || ch == 'n') {
             ArrayList<Textbook> newTextbookList = new ArrayList<>();
-            while(1) {
+            while(true) {
                 System.out.println("Please enter name of the textbook");
                 String textbookName = sc.nextLine();
                 System.out.println("Please enter author of the textbook");
@@ -72,9 +72,9 @@ public class Controller
         displayPrices(prices);
     }
 
-    public void displayPrices(ArrayList<Pair<String, double>> prices){
+    public void displayPrices(ArrayList<Pair<String, Double>> prices){
         for(int i=0;i<prices.size(); i++){
-            System.out.println("Book : " + prices[i].getKey() + "Price : " + prices[i].getValue());
+            System.out.println("Book : " + prices.get(i).getKey() + "Price : " + prices.get(i).getValue());
         }
     }
     public void saleSuggestedBook(ArrayList<Textbook> textbookList) {
@@ -101,7 +101,7 @@ public class Controller
         Message message = new Message(from, to, payload);
     }
 
-    public static Controller controllerInstance = null
+    public static Controller controllerInstance = null;
 
     public static Controller getInstance(){
         if(controllerInstance == null) controllerInstance = new Controller();

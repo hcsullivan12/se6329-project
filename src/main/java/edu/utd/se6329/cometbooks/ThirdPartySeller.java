@@ -1,7 +1,10 @@
 package edu.utd.se6329.cometbooks;
 
 import java.util.*;
-import javafx.util.*;
+
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
+
 //Singleton class
 public class ThirdPartySeller
 {
@@ -16,7 +19,7 @@ public class ThirdPartySeller
     }
 
     private ThirdPartySeller() {
-        bookToPriceMapper = HashMap<>();
+        bookToPriceMapper = new HashMap<String, Double>();
         bookToPriceMapper.put("12345", 23.4);
         bookToPriceMapper.put("sfsd3", 12.4);
         bookToPriceMapper.put("435vc", 33.4);
@@ -32,12 +35,13 @@ public class ThirdPartySeller
 
         for(int i=0;i<textbookList.size();i++){
             if(bookToPriceMapper.containsKey(textbookList.get(i).getISBN())){
-                prices.add(new Pair<String, Double>(textbookList.get(i).getISBN(), bookToPriceMapper.get(textbookList.get(i).getISBN())))
+                Pair<String, Double> price = new ImmutablePair<String, Double>(textbookList.get(i).getISBN(), bookToPriceMapper.get(textbookList.get(i).getISBN()));
+                prices.add(price);
             }
         }
         return prices;
     }
-    public static ThirdPartySeller thirdPartySellerInstance = null
+    public static ThirdPartySeller thirdPartySellerInstance = null;
 
     public static ThirdPartySeller getInstance(){
         if(thirdPartySellerInstance == null) thirdPartySellerInstance = new ThirdPartySeller();

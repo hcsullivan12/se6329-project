@@ -1,6 +1,5 @@
 package edu.utd.se6329.cometbooks;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class UserRecord extends User
 {
@@ -8,13 +7,16 @@ public class UserRecord extends User
     private String name;
     private String dob;
     private ArrayList<Textbook> textbookSold;
+    
     public UserRecord(String netId, String name, String dob) {
+        super(netId, name, dob);
         this.netId = netId;
         this.name = name;
         this.dob = dob;
     }
 
     public UserRecord(String netId, String name) {
+        super(netId, name);
         this.netId = netId;
         this.name = name;
     }

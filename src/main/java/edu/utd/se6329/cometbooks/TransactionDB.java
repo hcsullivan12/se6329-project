@@ -6,7 +6,7 @@ public class TransactionDB
 {
     ArrayList<Transaction> transactionDB;
 
-    private Transaction() {
+    private TransactionDB() {
         transactionDB = new ArrayList<>();
     }
     
@@ -15,7 +15,7 @@ public class TransactionDB
         System.out.println("Transaction added to DB!!!");
     }
 
-    public static TransactionDB transactionDBInstance = null
+    public static TransactionDB transactionDBInstance = null;
 
     public static TransactionDB getInstance(){
         if(transactionDBInstance == null) transactionDBInstance = new TransactionDB();
