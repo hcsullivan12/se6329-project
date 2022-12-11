@@ -8,7 +8,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         
         System.out.println("###################################");
-        System.out.println("     Weclome to Cometbooks!");
+        System.out.println("     Welcome to Cometbooks!");
         System.out.println();
 
         System.out.print("Enter username: ");
