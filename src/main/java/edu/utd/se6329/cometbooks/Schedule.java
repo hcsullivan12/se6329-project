@@ -21,4 +21,8 @@ public class Schedule
     public void updateCourse() {
         
     }
+    
+    public ArrayList<Course> getCourses(){
+        return courseList;
+    }
 }

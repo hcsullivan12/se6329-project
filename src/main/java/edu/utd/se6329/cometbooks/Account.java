@@ -11,4 +11,16 @@ public class Account
         this.password = password;
         this.name = name;
     }
+
+    public String getUsername(){ 
+        return username;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public String getName(){
+        return name;
+    }
 }
