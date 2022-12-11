@@ -3,24 +3,24 @@ import java.util.Scanner;
 
 public class Main {
 
-    //here main acts as seller
     public static void main(String[] args){
         Controller controllerInstance = Controller.getInstance();
         Scanner sc = new Scanner(System.in);
+        
+        System.out.println("###################################");
+        System.out.println("     Weclome to Cometbooks!");
+        System.out.println();
 
-        System.out.println("Enter username :");
+        System.out.print("Enter username: ");
         String username = sc.nextLine();
-        sc.nextLine();
-        System.out.println("Enter password :");
+        System.out.print("Enter password: ");
         String password = sc.nextLine();
-        sc.nextLine();
-        System.out.println("Enter Netid :");
+        System.out.print("Enter Netid: ");
         String netid = sc.nextLine();
-        sc.nextLine();
+        System.out.println();
 
         //perform login
         controllerInstance.login(username, password, netid);
-
 
         //handle the chat part
         System.out.println("What do you identify as (B/S)?");

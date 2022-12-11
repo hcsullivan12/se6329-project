@@ -24,7 +24,7 @@ public class Controller
         handleGetEnrolledCourses(netId,s);
     }
 
-    public void handleGetEnrolledCourses(String netid, Student s){
+    private void handleGetEnrolledCourses(String netid, Student s){
         UTDCoursebook utdCoursebookInstance = UTDCoursebook.getInstance();
         ArrayList<Course> courseList = utdCoursebookInstance.getCourses(netid);
         System.out.println("Enrolled courses for the student are:");
