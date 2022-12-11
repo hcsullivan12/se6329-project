@@ -1,15 +1,16 @@
 package edu.utd.se6329.cometbooks;
 
-public class MessageRecord
+public class MessageRecord extends Message
 {
-    private Student sender;
-    private Student receiver; 
+    private String sender;
+    private String receiver;
     private String payload;
 
     public MessageRecord(Student sender, Student receiver, String payload) {
         this.sender = sender;
         this.receiver = receiver;
         this.payload = payload;
+        createRecord();
     }
     
     public void createRecord() {

@@ -13,7 +13,7 @@ public class MessageDB
     
     public void save(MessageRecord messageRecord) {
         messageQ.add(messageRecord);
-        System.out.println("Message added to DB!!!");
+        System.out.println("Message record added to DB!!!");
     }
 
     public static MessageDB messageDBInstance = null

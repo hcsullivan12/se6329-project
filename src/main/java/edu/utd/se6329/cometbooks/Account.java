@@ -5,11 +5,11 @@ public class Account
     private String username;
     private String password;
     private String name;
-    
-    public Account(String username, String password, String name) {
+    private String netid;
+    public Account(String username, String password, String netid) {
         this.username = username;
         this.password = password;
-        this.name = name;
+        this.netid = netid;
     }
 
     public String getUsername(){ 

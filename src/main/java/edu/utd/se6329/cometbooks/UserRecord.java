@@ -2,19 +2,19 @@ package edu.utd.se6329.cometbooks;
 
 import java.util.Date;
 
-public class User
+public class UserRecord extends User
 {
     private String netId;
     private String name;
     private String dob;
     private ArrayList<Textbook> textbookSold;
-    public User(String netId, String name, String dob) {
+    public UserRecord(String netId, String name, String dob) {
         this.netId = netId;
         this.name = name;
         this.dob = dob;
     }
 
-    public User(String netId, String name) {
+    public UserRecord(String netId, String name) {
         this.netId = netId;
         this.name = name;
     }
@@ -28,10 +28,9 @@ public class User
         this.textbookSold = textbookList;
     }
     public void createSeller() {}
-    
-    public void createRecord() {
-        UserRecord userRecord = new UserRecord(this.netId,this.name,this.dob);
-        userRecord.setTextbookSold(this.textbookSold);
-        userRecord.saveRecordInDB();
+
+    public void saveRecordInDB() {
+        UserDB userDB = UserDB.getInstance();
+        userDB.save(this);
     }
 }

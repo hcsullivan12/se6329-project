@@ -2,12 +2,13 @@ package edu.utd.se6329.cometbooks;
 
 import java.util.ArrayList;
 
+//Singleton class
 public class UTDCoursebook
 {
     //netid ---> schedule mapper
     private Map<String, Schedule> scheduleMap;
     
-    public UTDCoursebook() {
+    private UTDCoursebook() {
         scheduleMap = new HashMap<String, Schedule>();
     }
     
@@ -39,7 +40,12 @@ public class UTDCoursebook
         for(int i=0; i<courses.size(); i++){
             textbooks.addAll(courses.get(i).getTextbooks());
         }
-
         return textbooks;
+    }
+    public static UTDCoursebook utdCoursebookInstance = null
+
+    public static UTDCoursebook getInstance(){
+        if(utdCoursebookInstance == null) utdCoursebookInstance = new Controller();
+        return utdCoursebookInstance;
     }
 }

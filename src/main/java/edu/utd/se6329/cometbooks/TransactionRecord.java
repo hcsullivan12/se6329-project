@@ -2,7 +2,7 @@ package edu.utd.se6329.cometbooks;
 
 import java.util.Date;
 
-public class TransactionRecord
+public class TransactionRecord extends Transaction
 {
     private String transactionDate;
     private double amount;

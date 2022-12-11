@@ -13,8 +13,5 @@ public class Student extends User {
     public void update(String dob){
         this.dob = dob;
     }
-    public Account createAccountInstance(){
-        return new Account(netId, name, dob);
-    }
 
 }
