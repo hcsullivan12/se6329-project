@@ -8,6 +8,14 @@ public class Payment
     private String date;
     private String textbookName;
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public Payment(String sellerName, String buyerName, String date, String textbookName, double price) {
         this.sellerName = sellerName;
         this.buyerName = buyerName;

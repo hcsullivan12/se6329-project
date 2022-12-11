@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args){
         Controller controllerInstance = Controller.getInstance();
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.println("###################################");
         System.out.println("     Welcome to Cometbooks!");
         System.out.println();

@@ -4,9 +4,13 @@ public class Account
 {
     private String username;
     private String password;
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     private String name;
     private String netid;
-    
     public Account(String username, String password, String netid) {
         this.username = username;
         this.password = password;

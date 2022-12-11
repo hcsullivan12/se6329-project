@@ -1,8 +1,8 @@
 package edu.utd.se6329.cometbooks;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 //Singleton class
 public class UTDCoursebook
@@ -20,6 +20,14 @@ public class UTDCoursebook
     
     public void removeSchedule(String netid) {
         this.scheduleMap.remove(netid);
+    }
+
+    public Map<String, Schedule> getScheduleMap() {
+        return scheduleMap;
+    }
+
+    public void setScheduleMap(Map<String, Schedule> scheduleMap) {
+        this.scheduleMap = scheduleMap;
     }
 
     public void updateCourse(String netid, Schedule s) {
@@ -44,10 +52,10 @@ public class UTDCoursebook
         }
         return textbooks;
     }
-    public static UTDCoursebook utdCoursebookInstance = null;
+    public static UTDCoursebook utdCoursebookInstance = null
 
     public static UTDCoursebook getInstance(){
-        if(utdCoursebookInstance == null) utdCoursebookInstance = new UTDCoursebook();
+        if(utdCoursebookInstance == null) utdCoursebookInstance = new Controller();
         return utdCoursebookInstance;
     }
 }

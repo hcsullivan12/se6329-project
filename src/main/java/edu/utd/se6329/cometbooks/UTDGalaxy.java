@@ -11,6 +11,8 @@ public class UTDGalaxy
     private Map<String, String> map2;
 
     private UTDGalaxy(){
+        pwdVerifier = new HashMap<String, String>();
+
         pwdVerifier = new HashMap<>();
         pwdVerifier.put("sayan", "say");
         pwdVerifier.put("ankita", "ank");
@@ -26,6 +28,14 @@ public class UTDGalaxy
         map2.put("trijit", "19960202");
     }
 
+    public Map<String, String> getPwdVerifier() {
+        return pwdVerifier;
+    }
+
+    public void setPwdVerifier(Map<String, String> pwdVerifier) {
+        this.pwdVerifier = pwdVerifier;
+    }
+
     public String authenticateUser(String netid, String password){
         if(pwdVerifier.containsKey(netid)){
             if(pwdVerifier.get(netid) == null) return null;
@@ -34,9 +44,9 @@ public class UTDGalaxy
         return null;
     }
 
-    public static UTDGalaxy utdGalaxyInstance = null;
+    public static Controller utdGalaxyInstance = null
 
-    public static UTDGalaxy getInstance(){
+    public static Controller getInstance(){
         if(utdGalaxyInstance == null) utdGalaxyInstance = new UTDGalaxy();
         return utdGalaxyInstance;
     }

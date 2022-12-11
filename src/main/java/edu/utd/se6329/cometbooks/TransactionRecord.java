@@ -7,6 +7,15 @@ public class TransactionRecord extends Transaction
     private String transactionDate;
     private double amount;
     private String sellerName;
+
+    public String getTransactionDate() {
+        return transactionDate;
+    }
+
+    public void setTransactionDate(String transactionDate) {
+        this.transactionDate = transactionDate;
+    }
+
     private String buyerName;
     
     public TransactionRecord(String transactionDate, double amount, String sellerName, String buyerName) {

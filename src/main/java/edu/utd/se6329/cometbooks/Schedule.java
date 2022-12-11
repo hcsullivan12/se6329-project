@@ -13,7 +13,15 @@ public class Schedule
     public void addCourse(Course course) {
         this.courseList.add(course);
     }
-    
+
+    public ArrayList<Course> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(ArrayList<Course> courseList) {
+        this.courseList = courseList;
+    }
+
     public void removeCourse(Course course) {
         this.courseList.remove(course);
     }

@@ -4,11 +4,19 @@ import java.util.ArrayList;
 
 public class User
 {
-    protected String netId;
-    protected String name;
-    protected String dob;
-    protected ArrayList<Textbook> textbookSold;
-    
+    private String netId;
+    private String name;
+    private String dob;
+    private ArrayList<Textbook> textbookSold;
+
+    public String getNetId() {
+        return netId;
+    }
+
+    public void setNetId(String netId) {
+        this.netId = netId;
+    }
+
     public User(String netId, String name, String dob) {
         this.netId = netId;
         this.name = name;

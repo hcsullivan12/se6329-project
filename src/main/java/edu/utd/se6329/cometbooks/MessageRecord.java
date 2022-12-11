@@ -10,7 +10,7 @@ public class MessageRecord extends Message
         super("fixme", "fixme", payload);
         createRecord();
     }
-    
+
     public void createRecord() {
         MessageDB messageDB = MessageDB.getInstance();
         messageDB.save(this);

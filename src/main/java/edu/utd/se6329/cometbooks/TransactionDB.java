@@ -1,14 +1,12 @@
 package edu.utd.se6329.cometbooks;
 
 import java.util.ArrayList;
-import java.util.Date;
-
 //Singleton class
 public class TransactionDB
 {
-    ArrayList<TransactionRecord> transactionDB;
+    ArrayList<Transaction> transactionDB;
 
-    private TransactionDB() {
+    private Transaction() {
         transactionDB = new ArrayList<>();
     }
     
@@ -17,7 +15,7 @@ public class TransactionDB
         System.out.println("Transaction added to DB!!!");
     }
 
-    public static TransactionDB transactionDBInstance = null;
+    public static TransactionDB transactionDBInstance = null
 
     public static TransactionDB getInstance(){
         if(transactionDBInstance == null) transactionDBInstance = new TransactionDB();

@@ -6,13 +6,13 @@ import java.util.ArrayList;
 public class MessageDB
 {
     private Student sender;
-    private Student receiver; 
+    private Student receiver;
     ArrayList<MessageRecord> messageQ;
 
     private MessageDB() {
         messageQ = new ArrayList<>();
     }
-    
+
     public void save(MessageRecord messageRecord) {
         messageQ.add(messageRecord);
         System.out.println("Message record added to DB!!!");
