@@ -25,6 +25,6 @@ public class Payment
     }
     
     public void createTransaction() {
-        Transaction transaction = new Transaction();
+        Transaction transaction = new Transaction(this.sellerName, this.buyerName, this.date, this.price);
     }
 }

@@ -18,15 +18,15 @@ public class TransactionRecord extends Transaction
 
     private String buyerName;
     
-    public TransactionRecord(String transactionDate, double amount, String sellerName, String buyerName) {
+    public TransactionRecord(String sellerName, String buyerName, String transactionDate, double amount) {
         this.transactionDate = transactionDate;
         this.sellerName = sellerName;
         this.buyerName = buyerName;
         this.amount = amount;
     }
     
-    public void createRecord() {
-        TransactionDB transactionDB = TransactionDB.getInstance();
+    public void saveRecordInDB() {
+        TransactionDB transactionDB = TransactionDB.getInstance(this.sellerName, this.buyerName, this.transactionDate, this.amount);
         transactionDB.save(this);
     }
 }
