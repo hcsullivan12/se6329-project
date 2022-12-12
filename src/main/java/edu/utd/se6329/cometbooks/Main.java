@@ -22,13 +22,6 @@ public class Main {
         //perform login
         controllerInstance.login(username, password, netid);
 
-        //complete Transaction
-        System.out.println("Was the transaction completed (Y/N)?");
-        String prompt = sc.next().charAt(0);
-        if(prompt == 'Y' || prompt == 'y'){
-            Payment p = new Payment("seller","buyer","20221211",11.46);
-        }
-
         //handle the chat part
         System.out.println("What do you identify as (B/S)?");
         String identity = sc.nextLine();
@@ -42,5 +35,11 @@ public class Main {
             if(ch.charAt(0) =='N' || ch.charAt(0) =='n') break;
         }
 
+        //complete Transaction
+        System.out.print("Was the transaction completed (Y/N)? ");
+        String prompt = sc.nextLine();
+        if(prompt.charAt(0) == 'Y' || prompt.charAt(0) == 'y'){
+            Payment p = new Payment("seller","buyer","20221211",11.46);
+        }
     }
 }

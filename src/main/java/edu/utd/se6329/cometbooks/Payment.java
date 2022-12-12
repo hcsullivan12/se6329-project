@@ -16,11 +16,11 @@ public class Payment
         this.price = price;
     }
 
-    public Payment(String sellerName, String buyerName, String date, String textbookName, double price) {
+    public Payment(String sellerName, String buyerName, String date, double price) {
         this.sellerName = sellerName;
         this.buyerName = buyerName;
         this.date = date;
-        this.textbookName = textbookName;
+        //this.textbookName = textbookName;
         this.price = price;
     }
     
